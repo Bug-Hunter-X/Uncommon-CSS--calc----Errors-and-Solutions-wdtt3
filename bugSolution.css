@@ -1,0 +1,29 @@
+/* Solution: bugSolution.css */
+
+/* Correct spacing in calc() */
+.element1 {
+  width: calc(100% - 20px);
+}
+
+/* Consistent units in calc() */
+.element2 {
+  width: calc(50% - 10px);
+}
+
+/* Correct nesting in calc() */
+.element3 {
+  width: calc(calc(50% - 10px) + 20px);
+}
+
+/* Avoid division by zero */
+.element4 {
+  width: calc(100px / (2 + 1)); /*Corrected to avoid division by zero*/
+}
+
+/*Handling potential errors gracefully*/
+.element5 {
+  width: clamp(0,calc(100px / var(--divisor, 1)), 200px);/* use clamp() and default value for var*/
+}
+:root {
+  --divisor: 0; 
+} 
